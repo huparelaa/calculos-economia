@@ -40,7 +40,7 @@ function Conversor() {
         onChange={(event) => setValor(event.target.value)}
         className="bg-slate-700 p-2 my-2 text-white"
       />
-      <div className="flex items-center">
+      <div className="flex flex-row">
         <ListaDespegable
           opciones={opciones}
           selectedOption={selectedOption}

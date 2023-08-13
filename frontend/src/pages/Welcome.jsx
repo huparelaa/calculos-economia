@@ -38,7 +38,7 @@ function Welcome() {
         />
       </div>
 
-      <button onClick={sumar} className="bg-green-500 rounded-full p-3">
+      <button onClick={sumar} className="bg-green-700 rounded-full p-3">
         Sumar
       </button>
       <h1 className="text-3xl">
@@ -47,11 +47,7 @@ function Welcome() {
           {resultado}
         </span>
       </h1>
-      <Link to="/conversor">
-        <button className="bg-purple-950 p-3 rounded-xl hover:bg-purple-800">
-          Ir al conversor
-        </button>
-      </Link>
+      
     </>
   );
 }
