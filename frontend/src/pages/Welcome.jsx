@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 import { doSuma } from "../api/consultas.api";
-
+import { Link } from "react-router-dom";
 function Welcome() {
-  const [num1, setNum1] = useState(null);
-  const [num2, setNum2] = useState(null);
+  const [num1, setNum1] = useState(0);
+  const [num2, setNum2] = useState(0);
   const [resultado, setResultado] = useState(null);
 
   const sumar = async () => {
@@ -11,7 +11,7 @@ function Welcome() {
     setResultado(res);
   };
   return (
-    <div className="p-3">
+    <>
       <h1 className="text-5xl">Testing</h1>
       <p>
         Esta vista fue construida para que se vea si el SetUp del proyecto se
@@ -20,19 +20,21 @@ function Welcome() {
       <div>
         <label htmlFor="num1">Numero 1</label>
         <input
+          value={num1}
           type="number"
           id="num1"
           onChange={(e) => setNum1(e.target.value)}
-          className="m-3 border-black border-2"
+          className="m-3 border-black border-2 pl-2"
         />
       </div>
       <div>
         <label htmlFor="num2">Numero 2</label>
         <input
+          value={num2}
           type="number"
           id="num2"
           onChange={(e) => setNum2(e.target.value)}
-          className="m-3 border-black border-2"
+          className="m-3 border-black border-2 pl-2"
         />
       </div>
 
@@ -40,9 +42,17 @@ function Welcome() {
         Sumar
       </button>
       <h1 className="text-3xl">
-        Resultado: <span className="font-bold text-amber-600">{resultado}</span>
+        Resultado:{" "}
+        <span className="font-bold text-amber-600">
+          {resultado}
+        </span>
       </h1>
-    </div>
+      <Link to="/conversor">
+        <button className="bg-purple-950 p-3 rounded-xl hover:bg-purple-800">
+          Ir al conversor
+        </button>
+      </Link>
+    </>
   );
 }
 
