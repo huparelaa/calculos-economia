@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { doSuma } from "../api/consultas.api";
 
 function Welcome() {
@@ -12,7 +12,8 @@ function Welcome() {
   };
   return (
     <div>
-      <h1>Testing</h1>
+      <h1 className="text-3xl font-bold underline">Hello world!</h1>
+      <h1 >Testing</h1>
       <p>
         Esta vista fue construida para que se vea si el SetUp del proyecto se
         realizó correctamente
