@@ -1,7 +1,12 @@
 import React, { useState } from "react";
 import Check from "../icons/Check";
 
-function FormValores({ setListaDeValores, listaDeValores,setMostrarFormulario, tipo }) {
+function FormValores({
+  setListaDeValores,
+  listaDeValores,
+  setMostrarFormulario,
+  tipo,
+}) {
   const [valorFP, setValorFP] = useState("VF");
   const [cantidadValor, setCantidadValor] = useState(0);
   const [tasaEfectiva, setTasaEfectiva] = useState(0);
@@ -15,17 +20,14 @@ function FormValores({ setListaDeValores, listaDeValores,setMostrarFormulario, t
         cantidadValor,
         tasaEfectiva,
         periodo,
-        tipo
+        tipo,
       },
     ]);
     setMostrarFormulario(false);
   };
 
   return (
-    <form
-      className="flex flex-row bg-slate-800 p-2 items-center w-full justify-between"
-      onSubmit={handleSubmit}
-    >
+    <div className="flex flex-row bg-slate-800 p-2 items-center w-full justify-between">
       <select
         className="mr-2 p-2"
         onChange={(event) => setValorFP(event.target.value)}
@@ -51,10 +53,10 @@ function FormValores({ setListaDeValores, listaDeValores,setMostrarFormulario, t
         className="mr-2"
         onChange={(e) => setPeriodo(e.target.value)}
       />
-      <button className="w-6 h-6" type="submit">
+      <button className="w-6 h-6" onClick={handleSubmit}>
         <Check />
       </button>
-    </form>
+    </div>
   );
 }
 
