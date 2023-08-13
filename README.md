@@ -1,4 +1,4 @@
-# Cálculos para interes compuesto y conversión de tasas
+# Cálculos para interés compuesto y conversión de tasas
 
 ## ¿Cómo lo instalo?
 Primero tienes que tener instalado python 3.8+ y la versión 16.20+ de Node.js. Además de las últimas versiones de pip y npm
