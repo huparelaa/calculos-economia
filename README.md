@@ -21,3 +21,7 @@ Ya con esto debería estar corriendo nuestra aplicación.
 Este proyecto cuenta con un backend hecho en django debido a lo bueno que es Python para realizar cálculos matemáticos, por lo que se decidió usar un framework como django.
 Y el frontend está hecho con react ¿Por qué? para practicar ☝️🤓
 
+
+---
+![image](https://github.com/huparelaa/calculos-economia/assets/81880485/9f58e8ee-666d-4abd-a623-09c9ec2e44e4)
+
