@@ -6,7 +6,7 @@ function ListaDespegable({ opciones, selectedOption, setSelectedOption }) {
   };
   return (
     <div>
-      <select value={selectedOption} onChange={handleSelectChange} className="bg-slate-700 p-2 my-2">
+      <select value={selectedOption} onChange={handleSelectChange} className="my-2">
         <option value="">Selecciona una opción...</option>
         {Object.keys(opciones).map((opcion) => (
           <option key={opcion} value={opcion}>

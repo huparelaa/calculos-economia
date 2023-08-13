@@ -38,7 +38,7 @@ function Conversor() {
         type="number"
         value={valor}
         onChange={(event) => setValor(event.target.value)}
-        className="bg-slate-700 p-2 my-2 text-white"
+        className="my-2"
       />
       <div className="flex flex-row">
         <ListaDespegable

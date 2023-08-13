@@ -2,10 +2,21 @@
 @tailwind components;
 @tailwind utilities;
 
-:root{
+:root {
     background-color: #030712;
     color: white;
 }
-input{
-    color:#000;
+
+input {
+    color: #fff;
+    --tw-bg-opacity: 1;
+    background-color: rgb(15 23 42 / var(--tw-bg-opacity));
+    outline: none;
+    padding: 8px;
+}
+
+select {
+    --tw-bg-opacity: 1;
+    background-color: rgb(15 23 42 / var(--tw-bg-opacity));
+    padding: 10px;
 }
