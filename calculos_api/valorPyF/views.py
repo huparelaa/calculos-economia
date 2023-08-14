@@ -10,7 +10,6 @@ def valorFuturo(request):
         i = data.get("i", 0)
         n = data.get("n", 0)
         result = vp * (1 + i)**n
-        result = round(result, 2) #redondeamos a 2 decimales
         return JsonResponse({"result": result})
     except ValueError:
         return JsonResponse({"error": "Invalid input. Please provide valid numbers."})
@@ -23,7 +22,6 @@ def valorPresente(request):
         i = data.get("i", 0)
         n = data.get("n", 0)
         result = vf / (1 + i)**n
-        result = round(result, 2) #redondeamos a 2 decimales
         return JsonResponse({"result": result})
     except ValueError:
         return JsonResponse({"error": "Invalid input. Please provide valid numbers."})
@@ -65,7 +63,7 @@ def calcX(request):
             print(suma_de_egresos)
         
         final_result = (suma_de_egresos - suma_de_ingresos) / divisor_ingresos
-        return JsonResponse({"result": round(final_result,2)})
+        return JsonResponse({"result": final_result})
         
     except ValueError:
         return JsonResponse({"error": "Invalid input. Please provide valid numbers."})

@@ -40,7 +40,6 @@ def efectivaX_a_efectivaY(request):
 
         i2 = ((1+i1)**(m1/m2))-1
         #redondeamos a 4 decimales
-        i2 = round(i2, 4)
         return JsonResponse({"result": i2})
 
     except ValueError:
