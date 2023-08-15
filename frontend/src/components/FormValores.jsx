@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import Check from "../icons/Check";
+import { calcularValorFuturo, calcularValorPresente } from "../api/consultas.api";
 
 function FormValores({
   setListaDeValores,
@@ -11,8 +12,14 @@ function FormValores({
   const [cantidadValor, setCantidadValor] = useState(0);
   const [tasaEfectiva, setTasaEfectiva] = useState(0);
   const [periodo, setPeriodo] = useState(0);
-  const handleSubmit = (event) => {
+  const handleSubmit = async (event) => {
+    let result = null;
     event.preventDefault();
+    if (valorFP === "VF") {
+      result = await calcularValorFuturo(cantidadValor, tasaEfectiva, periodo);
+    } else if(valorFP === "VP"){
+      result = await calcularValorPresente(cantidadValor, tasaEfectiva, periodo);
+    }
     setListaDeValores([
       ...listaDeValores,
       {
@@ -21,6 +28,7 @@ function FormValores({
         tasaEfectiva,
         periodo,
         tipo,
+        result,
       },
     ]);
     setMostrarFormulario(false);

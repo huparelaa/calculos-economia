@@ -2,21 +2,16 @@ import React, { useState } from "react";
 import Plus from "../icons/Plus";
 import Minus from "../icons/Minus";
 import FormValores from "../components/FormValores";
+import { serviceCalcularX } from "../services/calcularX";
 
 function Valor() {
-  const [listaDeValores, setListaDeValores] = useState([
-    {
-      valorFP: "Valor F/P",
-      cantidadValor: "Valor",
-      tasaEfectiva: "i",
-      periodo: "n",
-      result: "Resultado",
-      tipo:null
-    },
-  ]);
+  const [listaDeValores, setListaDeValores] = useState([]);
   const [mostrarFormulario, setMostrarFormulario] = useState(false);
   const [ingreso, setIngreso] = useState(null);
-
+  const [response, setResponse] = useState(null);
+  const handleCalcular = async() => {
+    setResponse(await serviceCalcularX(listaDeValores));
+  };
   return (
     <>
       {listaDeValores.map((valor) => (
@@ -29,7 +24,7 @@ function Valor() {
               : ""
           }`}
         >
-          <p>{valor.valorFP}</p>
+          <p>{valor.valorFP} =</p>
           <p>{valor.cantidadValor}</p>
           <p>{valor.tasaEfectiva}</p>
           <p>{valor.periodo}</p>
@@ -45,7 +40,7 @@ function Valor() {
             tipo={ingreso}
           />
         )}
-        <div className="flex gap-2">
+        <div className="flex gap-2 m-2">
           <button
             onClick={() => {
               setMostrarFormulario(true);
@@ -63,7 +58,19 @@ function Valor() {
             <Minus />
           </button>
         </div>
+        <button
+          className="bg-purple-950 hover:bg-purple-800 hover:scale-110 text-yellow-300 rounded-2xl text-xl p-3
+        m-3"
+          onClick={handleCalcular}
+        >
+          Calcular X
+        </button>
       </div>
+      {response && (
+        <div className="flex flex-col mt-3 items-center">
+          <p className="text-2xl">X = {response}</p>
+        </div>
+      )}
     </>
   );
 }
